@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://brobtp4m0pwli"]
+[gd_scene load_steps=3 format=3 uid="uid://brobtp4m0pwli"]
 
 [ext_resource type="Script" uid="uid://csfvwmsddo8g5" path="res://person.gd" id="1_0pife"]
+[ext_resource type="Texture2D" uid="uid://bhsflytuc54ad" path="res://icon.svg" id="2_hncb1"]
 
 [node name="person" type="Node2D"]
 script = ExtResource("1_0pife")
 
-[node name="CharSprite" type="Sprite2D" parent="."]
+[node name="charSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_hncb1")
 
-[node name="CharName" type="Label" parent="."]
+[node name="info_label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+text = "test for now"
