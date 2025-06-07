@@ -15,6 +15,10 @@ run/main_scene="uid://em8bghbqtkq4"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+TraitData_Autoload="*res://TraitData.gd"
+
 [dotnet]
 
 project/assembly_name="Shop Management Game"

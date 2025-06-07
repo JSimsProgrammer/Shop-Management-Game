@@ -1,0 +1,10 @@
+So for Person Type, I will have lots of different types. There will be personality style sliders on their character. 
+Maybe playesr can see their scores, maybe not. Don't sure. But I think these traits will also be store traits. I need to think
+of how that loop will work. But then, once your score has a certain high enough score, it will increase the chance of that type of person showing,
+and people of that type like the store more. It will also increase the chance of events of that type happening. As far as how it needs to be structured,
+it will need to be a weighted ratio. I'm gonna write some shit psuedocode below to try to explain it:
+	
+	#My example traits are Weird, Poltical, and Business
+	
+	func EventType(weird_weight, political_weight, business_weight):
+		
