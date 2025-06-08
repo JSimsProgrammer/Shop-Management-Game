@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 TraitData="*res://TraitData.gd"
 
+[display]
+
+window/size/viewport_width=2000
+window/size/viewport_height=1500
+
 [dotnet]
 
 project/assembly_name="Shop Management Game"

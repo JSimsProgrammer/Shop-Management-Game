@@ -102,7 +102,10 @@ func assignRandTraits():
 		self.traits.append(TraitData.TRAIT_LIST[i])
 
 func updateLabel():
-	var label_text = "Name: %s \nType: %s \nSpeed: %d \nTraits: %s" % [char_name, role, stats["speed"], ", ".join(traits)]
+	var label_text = (
+	"Name: %s\nType: %s\nBase Speed: %d\nSpeed: %d\nTraits: %s"
+	% [char_name, role, base_stats["speed"], stats["speed"], ", ".join(traits)]
+)
 	if self.role == "customer":
 		label_text += " \nCash: $%.2f" % self.cash
 	$info_label.text = label_text
