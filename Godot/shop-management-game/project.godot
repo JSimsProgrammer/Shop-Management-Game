@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-TraitData_Autoload="*res://TraitData.gd"
+TraitData="*res://TraitData.gd"
 
 [dotnet]
 
