@@ -3,48 +3,60 @@ extends Node
 const TRAIT_DATA = {
 	"Rich": {
 		"description": "Starts with lots of money",
-		"shared_traits": {},
-		"customer_traits": {
-			"cash_bonus": 1000
+		"shared_mods": {},
+		"customer_mods": {
+			"other": {
+				"cash_bonus": 1000
+			}
 		},
-		"employee_traits" : {}
+		"employee_mods" : {}
 	},
 	"High": {
 		"description": "moves slower, acts slower, happier",
-		"shared_traits": {
-			"speed_multiplyer": 0.8,
-			"thought_multiplyer": 0.8,
-			"mood_additive": 1.5
+		"shared_mods": {
+			"additives": {
+				"mood": 15
+			},
+			"multipliers": {
+				"speed": 0.8,
+				"thought": 0.9
+			}
 		},
-		"customer_traits" : {},
-		"employee_traits" : {}
+		"customer_mods" : {},
+		"employee_mods" : {}
 	},
 	"Uppers": {
-		"shared_traits": {
-			"speed_multiplyer": 1.2
+		"shared_mods": {
+			"multipliers": {
+				"speed": 1.2
+			}
 		},
-		"customer_traits": {},
-		"employee_traits": {}
+		"customer_mods": {},
+		"employee_mods": {}
 		
 	},
 	"Anxious" : {
-		"shared_traits": {
+		"shared_mods": {
 			"speed_multiplyer": 1.1,
 			"thought_multiplyer": 0.9
 		},
-		"customer_traits": {},
-		"employee_traits": {}
+		"customer_mods": {},
+		"employee_mods": {}
 		
 	},
 	"Elderly": {
-		"shared_traits": {
-			"speed_multiplyer": 0.8,
-			"thought_multiplyer": 0.9,
+		"shared_mods": {
+			"multipliers": {
+				"speed": 0.8,
+				"thought": 0.9
+			}
 		},
-		"customer_traits": {
-			"cash_bonus": 250
+		"customer_mods": {
+			"other": {
+				"cash_bonus": 250
+			}
 		},
-		"employee_traits": {}
+		"employee_mods": {}
 	}
 }
 
