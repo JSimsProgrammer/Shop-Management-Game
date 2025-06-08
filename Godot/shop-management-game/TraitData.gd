@@ -6,7 +6,7 @@ const TRAIT_DATA = {
 		"shared_mods": {},
 		"customer_mods": {
 			"other": {
-				"cash_bonus": 1000
+				"cash_bonus_range": [500, 2000]
 			}
 		},
 		"employee_mods" : {}
@@ -37,8 +37,10 @@ const TRAIT_DATA = {
 	},
 	"Anxious" : {
 		"shared_mods": {
-			"speed_multiplyer": 1.1,
-			"thought_multiplyer": 0.9
+			"multipliers": {
+				"speed": 1.1,
+				"thought": 0.9
+			}
 		},
 		"customer_mods": {},
 		"employee_mods": {}
@@ -53,7 +55,7 @@ const TRAIT_DATA = {
 		},
 		"customer_mods": {
 			"other": {
-				"cash_bonus": 250
+				"cash_bonus_range": [250, 500]
 			}
 		},
 		"employee_mods": {}

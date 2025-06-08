@@ -6,7 +6,6 @@ var char_name: String
 var role: String
 var traits: Array = []
 
-
 var base_stats = {
 	"speed": randf_range(95, 105),
 	"mood": randf_range(95, 105),
@@ -74,8 +73,9 @@ func addSingleTrait(t: String, run_set_stats: bool = true):
 				var value = mods_dict[stat_key]
 				if mod_type == "other":
 					match stat_key:
-						"cash_bonus":
-							addCash(value)
+						"cash_bonus_range":
+							if role == "customer":
+								addCash(randi_range(value[0], value[1]))
 				else:
 					addModifier(stat_key, mod_type, value)
 	if run_set_stats:
@@ -86,7 +86,7 @@ func addMultipleTraits(trait_list: Array):
 		addSingleTrait(traits, false)
 	setStats()
 
-func assignTraits():
+func assignRandTraits():
 	var appliedTraits: Array = []
 	var randTrait: int = -1
 	var numTraits: int = randi_range(0,2)
@@ -102,7 +102,7 @@ func assignTraits():
 		self.traits.append(TraitData.TRAIT_LIST[i])
 
 func updateLabel():
-	var label_text = "Name: %s \nType: %s \nSpeed: %d" % [char_name, role, stats["speed"]]
-	if self is Customer:
+	var label_text = "Name: %s \nType: %s \nSpeed: %d \nTraits: %s" % [char_name, role, stats["speed"], ", ".join(traits)]
+	if self.role == "customer":
 		label_text += " \nCash: $%.2f" % self.cash
 	$info_label.text = label_text
