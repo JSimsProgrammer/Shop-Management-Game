@@ -6,6 +6,9 @@ var char_name: String
 var role: String
 var traits: Array = []
 
+@onready var info_label = $info_label
+@onready var click_area = $click_area
+
 var base_stats = {
 	"speed": randf_range(95, 105),
 	"mood": randf_range(95, 105),
@@ -32,6 +35,17 @@ var stat_mods = {
 		"multipliers": []
 	}
 }
+
+func _ready():
+	update_label()
+	click_area.connect("input_event", Callable(self, "_on_click_area_input"))
+
+func update_label():
+	info_label.text = char_name
+
+func _on_click_area_input(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		CharacterWindow.showFor(self)  # Assumes CharacterWindow is an autoload singleton or reachable globally
 
 func getStat(s: String):
 	var additivesArray = stat_mods[s]["additives"]
@@ -102,10 +116,4 @@ func assignRandTraits():
 		self.traits.append(TraitData.TRAIT_LIST[i])
 
 func updateLabel():
-	var label_text = (
-	"Name: %s\nType: %s\nBase Speed: %d\nSpeed: %d\nTraits: %s"
-	% [char_name, role, base_stats["speed"], stats["speed"], ", ".join(traits)]
-)
-	if self.role == "customer":
-		label_text += " \nCash: $%.2f" % self.cash
-	$info_label.text = label_text
+	$info_label.text = char_name

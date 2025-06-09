@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd8h33nn55jk4"]
+[gd_scene load_steps=5 format=3 uid="uid://72q0ohk4r7qu"]
 
 [ext_resource type="Texture2D" uid="uid://bhsflytuc54ad" path="res://icon.svg" id="1_octeb"]
+[ext_resource type="Script" uid="uid://buhmv0p0yc7vn" path="res://characterWindow.gd" id="1_yaa64"]
 [ext_resource type="Texture2D" uid="uid://byf1hc5b4sglt" path="res://art/progressBar.png" id="2_bwdu3"]
 [ext_resource type="Texture2D" uid="uid://do4y78ab4fhk5" path="res://art/barBackground.png" id="2_yaa64"]
 
@@ -15,6 +16,7 @@ offset_right = -1988.0
 offset_bottom = -1915.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yaa64")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -22,6 +24,7 @@ offset_left = 604.0
 offset_top = 633.0
 offset_right = 1212.0
 offset_bottom = 835.0
+script = ExtResource("1_yaa64")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 0
@@ -54,6 +57,7 @@ offset_left = 201.0
 offset_top = 84.0
 offset_right = 581.0
 offset_bottom = 103.0
+max_value = 200.0
 value = 98.0
 texture_under = ExtResource("2_yaa64")
 texture_progress = ExtResource("2_bwdu3")
@@ -67,10 +71,12 @@ offset_bottom = 22.0
 text = "28"
 
 [node name="moodProgress" type="TextureProgressBar" parent="Panel"]
+layout_mode = 0
 offset_left = 201.0
 offset_top = 123.0
 offset_right = 581.0
 offset_bottom = 142.0
+max_value = 200.0
 value = 98.0
 texture_under = ExtResource("2_yaa64")
 texture_progress = ExtResource("2_bwdu3")
@@ -84,10 +90,12 @@ offset_bottom = 22.0
 text = "28"
 
 [node name="thoughtProgress" type="TextureProgressBar" parent="Panel"]
+layout_mode = 0
 offset_left = 201.0
 offset_top = 159.0
 offset_right = 581.0
 offset_bottom = 178.0
+max_value = 200.0
 value = 98.0
 texture_under = ExtResource("2_yaa64")
 texture_progress = ExtResource("2_bwdu3")
@@ -109,6 +117,7 @@ offset_bottom = 104.0
 text = "Speed:"
 
 [node name="thoughtLabel" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 123.0
 offset_top = 155.0
 offset_right = 192.0
@@ -116,6 +125,7 @@ offset_bottom = 178.0
 text = "Thought:"
 
 [node name="moodLabel" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 141.0
 offset_top = 121.0
 offset_right = 200.0
